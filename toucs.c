@@ -43,10 +43,7 @@ static void unicode_emit(void *ctx, long int output)
     }
 }
 
-int charset_to_unicode(const char **input, int *inlen,
-                       wchar_t *output, int outlen,
-                       int charset, charset_state *state,
-                       const wchar_t *errstr, int errlen)
+int charset_to_unicode(const char **input)
 {
     charset_spec const *spec = charset_find_spec(charset);
     charset_state localstate;
