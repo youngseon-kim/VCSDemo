@@ -26,19 +26,16 @@ static void unicode_emit(void *ctx, long int output)
             outlen = param->errlen;
         } else {
             outval = 0xFFFD;           /* U+FFFD REPLACEMENT CHARACTER */
-            p = &outval;
             outlen = 1;
         }
     } else {
         outval = output;
-        p = &outval;
         outlen = 1;
     }
 
     if (param->outlen >= outlen) {
         while (outlen > 0) {
             *param->output++ = *p++;
-            param->outlen--;
             outlen--;
         }
     } else {
