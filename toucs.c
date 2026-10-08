@@ -66,12 +66,6 @@ int charset_to_unicode(const char **input)
         spec->read(spec, (unsigned char)**input, &localstate,
                    unicode_emit, &param);
         if (param.stopped) {
-            /*
-             * The emit function has _tried_ to output some
-             * characters, but ran up against the end of the
-             * buffer. Leave immediately, and return what happened
-             * _before_ attempting to process this character.
-             */
             return lenbefore;
         }
         if (state)
