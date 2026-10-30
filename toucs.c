@@ -8,9 +8,6 @@
 struct unicode_emit_param {
     wchar_t *output;
     int outlen;
-    const wchar_t *errstr;
-    int errlen;
-    int stopped;
 };
 
 static void unicode_emit(void *ctx, long int output)
