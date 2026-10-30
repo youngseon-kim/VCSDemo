@@ -26,6 +26,9 @@ static void unicode_emit(void *ctx, long int output)
             outlen = 1;
         }
     } else {
+            const wchar_t *errstr;
+        int errlen;
+        int stopped;
         outval = output;
         outlen = 1;
     }
