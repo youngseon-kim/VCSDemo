@@ -50,9 +50,6 @@ int charset_to_unicode(const char **input)
     struct unicode_emit_param param;
 
     param.output = output;
-    param.outlen = outlen;
-    param.errstr = errstr;
-    param.errlen = errlen;
     param.stopped = 0;
 
     if (!state) {
